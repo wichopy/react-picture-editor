@@ -24,19 +24,19 @@ const DropzoneDemo = React.createClass({
 
     render: function () {
       return (
-        <div>
+        <div className="dropzone">
           {
             this.state.files.length > 0 
             ? //IF TRUE
-            <div>
+            <div >
               <div>
                 {this.state.files.map((file) => 
-                  <img className="img" src={file.preview} style={this.props.styles}/> 
+                  <img className="img" src={file.preview} style={this.props.styles} /> 
                 )}
               </div>
             </div> 
             : //IF FALSE
-            <div>
+            <div >
               <Dropzone ref={(node) => { this.dropzone = node; }} onDrop={this.onDrop}>
                 <div>Try dropping some files here, or click to select files to upload.</div>
               </Dropzone>
@@ -102,7 +102,7 @@ class App extends Component {
         </div>
         <Row className="App-main-container card-panel grey lighten-2">
           <Col s={9} className='grid-example'>
-          <div className="card-panel white picture-wrapper valign-wrapper center-align">          
+          <div className="card-panel white picture-wrapper valign-wrapper center-align">
             <DropzoneDemo className="valign center-align" 
               styles={
                 {
@@ -116,13 +116,7 @@ class App extends Component {
           </Col>
           <Col s={3} className='avail-buttons'>
           <p>Rotate</p>
-            <div class="chip">
-              0 deg
-            </div>
-             <div class="chip">
-              360 deg
-            </div>
-          <p className="range-field"><input className="valign" type="range" min="0" max="360" value={this.state.rotation} step="1" onChange={this.adjustRotation}/></p>
+          <p className="range-field"><input className="valign" type="range" min="-180" max="180" value={this.state.rotation} step="1" onChange={this.adjustRotation}/></p>
           <p>Translate</p>
           <p className="range-field"><input className="valign" type="range" min="-100" max="100" value={this.state.translate} step="1" onChange={this.adjustTranslate}/></p>
           <p>Opacity</p>

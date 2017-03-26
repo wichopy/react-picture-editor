@@ -7,6 +7,10 @@
     height: 80px;
 }
 
+.dropzone {
+    margin: auto;
+}
+
 .meme {
     height: 100%;
     display: inline;
@@ -39,18 +43,4 @@
 
 .avail-buttons {
     height: 100%;
-}
-
-.img {
-    max-height: 70%;
-    max-width: 70%;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
